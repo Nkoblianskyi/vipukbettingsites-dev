@@ -15,7 +15,6 @@ const safetyPartners = [
   { src: "/gamstop.svg", alt: "GamStop", href: "https://www.gamstop.co.uk/", darkBg: true },
   { src: "/Gambling_Commission_logo.png", alt: "Gambling Commission", href: "https://www.gamblingcommission.gov.uk/", darkBg: true },
 ]
-]
 
 function FooterBrand() {
   return (
