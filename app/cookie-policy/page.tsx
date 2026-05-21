@@ -80,7 +80,7 @@ export default function CookiePolicyPage() {
             </h1>
           </div>
           <p className="text-white/45 text-xs mt-1 ml-11">
-            vipukbettingsites.com · Last updated: January {new Date().getFullYear()}
+            vipukbettingsites.com · Last updated:  {new Date().getFullYear()}
           </p>
         </div>
       </div>
