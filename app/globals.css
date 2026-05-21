@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Dark elite theme — deep charcoal base ─────────── */
+    --background:        220  18%   8%;   /* #0f1218 — near-black charcoal */
+    --foreground:        210  20%  92%;   /* #e6eaf2 — off-white text */
+
+    --card:              220  16%  12%;   /* #181d27 — dark card surface */
+    --card-foreground:   210  20%  92%;
+
+    --popover:           220  16%  12%;
+    --popover-foreground: 210  20%  92%;
+
+    --surface:           220  14%  16%;   /* #1f2534 — slightly lifted panel */
+
+    /* Gold — primary CTA (VIP brand) */
+    --primary:           43   96%  52%;   /* #f5b800 — premium gold */
+    --primary-foreground: 220  18%   8%;  /* dark text on gold */
+
+    /* Dark slate — secondary */
+    --secondary:         220  14%  18%;   /* #222a38 */
+    --secondary-foreground: 210  20%  80%;
+
+    --muted:             220  14%  18%;
+    --muted-foreground:  220  12%  52%;   /* #72788a */
+
+    --accent:            43   96%  52%;   /* gold accent */
+    --accent-foreground: 220  18%   8%;
+
+    /* Crimson — #1 rank highlight */
+    --highlight:         43   96%  52%;   /* gold for top rank */
+    --highlight-foreground: 220  18%  8%;
+
+    /* Deep navy — header / prominent dark surfaces */
+    --navy:              220  28%  10%;   /* #0d1320 */
+    --navy-foreground:   210  20%  92%;
+
+    /* Danger */
+    --destructive:       0    72%  54%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:            220  14%  22%;   /* #2a3042 — subtle dark border */
+    --input:             220  14%  22%;
+    --ring:              43   96%  52%;   /* gold ring */
+    --radius:            0.5rem;
+
+    /* Sports green — live/active badge */
+    --live:              148  72%  44%;   /* #1db86a */
+    --live-foreground:   0    0%  100%;
+  }
+}
+
+@layer base {
+  * { @apply border-border box-border; }
+  body { @apply bg-background text-foreground; }
+  h1, h2, h3, h4 { @apply font-heading; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Gold glow for rank #1 card ── */
+.rank-1-glow {
+  box-shadow:
+    0 0 0 2px hsl(43 96% 52% / 0.65),
+    0 6px 40px hsl(43 96% 52% / 0.18);
+}
+
+/* ── Animated gold underline for nav links ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: hsl(var(--primary));
+  transition: width 0.2s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 40px hsl(43 96% 52% / 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Section sport-dark backgrounds ── */
+.section-dark {
+  background: hsl(var(--background));
+}
+.section-card {
+  background: hsl(var(--card));
+}
+.section-surface {
+  background: hsl(var(--surface));
+}
+
+/* ── Gold divider line ── */
+.gold-divider {
+  border-color: hsl(43 96% 52% / 0.25);
+}
+
+/* ── Shimmer badge ── */
+.vip-badge {
+  background: linear-gradient(90deg, hsl(43 96% 52%), hsl(36 100% 62%));
+  color: hsl(220 18% 8%);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
