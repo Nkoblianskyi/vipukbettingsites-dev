@@ -4,7 +4,7 @@ import { Inter, Outfit } from "next/font/google"
 import "./globals.css"
 import { Footer } from "@/components/footer"
 import { CookieBanner } from "@/components/cookie-banner"
-import { TopSitesModal } from "@/components/top-sites-modal"
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-outfit" })
@@ -41,7 +41,6 @@ export default function RootLayout({
           {children}
           <Footer />
           <CookieBanner />
-          <TopSitesModal />
         </div>
       </body>
     </html>
